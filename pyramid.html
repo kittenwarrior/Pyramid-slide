@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+            color: #2f2475
+        }
+        body {
+            font-family: monospace;
+            background-color: LightCyan;
+            text-align: center;
+        }
+        form {
+          height: 50px;
+          width: 800px;
+          background-color: LightBlue;
+          border: 2px solid #4fabc9;
+          border-radius: 5px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+        #symbolLabel {
+          padding: 5px;
+          color: #6a5acd;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        #rangeLabel {
+          padding: 5px;
+          color: #6a5acd;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        #heightval {
+          width: 5px;
+          padding: 5px;
+          color: #6a5acd;
+          display: inline-block;
+        }
+        #height {
+          margin-top: 10px;
+        }
+        h1{
+          color: #2f2475;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pyramid Slide!</h1>
+
+    <form id="draw-form">
+        <label id="symbolLabel">
+          What symbol?
+
+          <select id="symbol"
+                  onchange="drawPyramid(heightElem.value, symbolElem.value)">
+            <option value="#" selected="selected">#</option>
+            <option value="X">X</option>
+            <option value="@">@</option>
+            <option value="$">$</option>
+          </select>
+        </label>
+        <label id="rangeLabel">
+          How high?
+
+          <input type="range" id="height" min="1" max="20" value="2"
+                oninput="drawPyramid(heightElem.value, symbolElem.value)"/>
+            <div id="heightval">1</div>
+        </label>
+        <br><br>
+
+    </form>
+
+    <br><br>
+
+    <div id="pyramid"></div>
+
+    <script src="pyramid.js"></script>
+</body>
+</html>
